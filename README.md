@@ -3,6 +3,7 @@
 ![Tensorflow Version](https://img.shields.io/badge/tensorflow-2.3.0-lime)
 ![Keras Version](https://img.shields.io/badge/keras-2.4.3-orange)
 ![Pypi Version](https://img.shields.io/badge/pypi-20.0.2-yellow)
+![Mediapipe](https://img.shields.io/badge/mediapipe-blue)
 
 Lyrical Sentiment Analysis in Python using Natural Language Processing(NLP) with the help of [Mediapipe](https://developers.google.com/mediapipe).
 
@@ -11,7 +12,7 @@ Lyrical Sentiment Analysis in Python using Natural Language Processing(NLP) with
  ```
 pip install -r requirements.txt
 
-we need to update the webdriver after we import all the required files with the command bellow
+# we need to update the webdriver after we import all the required files with the command bellow
 
 pip install --upgrade webdriver-manager
 ```
