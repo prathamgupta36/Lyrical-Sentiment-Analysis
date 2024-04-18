@@ -4,6 +4,8 @@
 ![Keras Version](https://img.shields.io/badge/keras-2.4.3-orange)
 ![Pypi Version](https://img.shields.io/badge/pypi-20.0.2-yellow)
 
+Lyrical Sentiment Analysis in Python using Natural Language Processing(NLP) with the help of [Mediapipe](https://developers.google.com/mediapipe).
+
 ## Scraping
  To start the scraping process we need to get the requirement for the scarping.
  ```
