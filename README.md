@@ -1,10 +1,10 @@
 # Lyrical Sentiment Analysis
-![Python Version](https://img.shields.io/badge/Python-3.7.6-red)
-![Tensorflow Version](https://img.shields.io/badge/tensorflow-2.3.0-lime)
-![Keras Version](https://img.shields.io/badge/keras-2.4.3-orange)
-![Pypi Version](https://img.shields.io/badge/pypi-20.0.2-yellow)
-![Mediapipe](https://img.shields.io/badge/mediapipe-blue)
-![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white)
+[![Python Version](https://img.shields.io/badge/Python-3.7.6-red)](https://www.python.org/downloads/release/python-3717/)
+[![Tensorflow Version](https://img.shields.io/badge/tensorflow-2.3.0-lime)](https://www.tensorflow.org/)
+[![Keras Version](https://img.shields.io/badge/keras-2.4.3-orange)](https://keras.io/)
+[![Pypi Version](https://img.shields.io/badge/pypi-20.0.2-yellow)](https://pypi.org/)
+[![Mediapipe](https://img.shields.io/badge/mediapipe-blue)](https://developers.google.com/mediapipe)
+[![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white)](https://pypi.org/project/selenium/)
 
 ## Overview
 Lyrical Sentiment Analysis in Python using Natural Language Processing(NLP) with the help of [Mediapipe](https://developers.google.com/mediapipe). This project focuses on sentiment analysis of song lyrics to identify positive and negative sentiments, employing advanced NLP and machine learning techniques. We have incorporated Google's MediaPipe framework specifically for enhancing the processing capabilities of our BERT model, previously leveraging only TensorFlow and Transformers from Hugging Face.
