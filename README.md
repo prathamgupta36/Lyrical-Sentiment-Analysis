@@ -37,12 +37,12 @@ pip install --upgrade webdriver-manager
 
 
 ## Contributors
-- Josue Cortez
-- Pratham Gupta
-- Shashank Navad
-- Ryan Skabelund
-- Race Musgrave
-- Tanooj Reddy Seelam
+- [Josue Cortez](https://github.com/jgcortez)
+- [Pratham Gupta](https://github.com/prathamgupta36)
+- [Shashank Navad](https://github.com/shashnavad)
+- [Ryan Skabelund](https://github.com/ryan-skabelund)
+- [Race Musgrave](https://github.com/R-a-c-e)
+- [Tanooj Reddy Seelam](https://github.com/TanoojSeelam)
 
 ## Acknowledgements
 - Arizona State University, School of Computing and Augmented Intelligence
