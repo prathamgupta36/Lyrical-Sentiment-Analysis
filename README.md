@@ -3,7 +3,8 @@
 [![Tensorflow Version](https://img.shields.io/badge/tensorflow-2.3.0-lime)](https://www.tensorflow.org/)
 [![Keras Version](https://img.shields.io/badge/keras-2.4.3-orange)](https://keras.io/)
 [![Pypi Version](https://img.shields.io/badge/pypi-20.0.2-yellow)](https://pypi.org/)
-[![Mediapipe](https://img.shields.io/badge/mediapipe-blue)](https://developers.google.com/mediapipe)
+[![mediapipe](https://github.com/simple-icons/simple-icons/assets/63730759/902f5f08-2056-436a-8536-22c0dea221d8)
+](https://developers.google.com/mediapipe)
 [![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white)](https://pypi.org/project/selenium/)
 
 ## Overview
