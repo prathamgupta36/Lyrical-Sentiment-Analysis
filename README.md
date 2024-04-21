@@ -35,6 +35,23 @@ pip install --upgrade webdriver-manager
 
 ## Usage
 
+## UI
+
+### Classical Machine Learning Model UI
+
+Download these file from the project:
+- [logistic_regression_model.pkl](https://github.com/prathamgupta36/Lyrical-Sentiment-Analysis/blob/main/Code/UI/Classical%20ML/logistic_regression_model.pkl)
+- [streamer.py](https://github.com/prathamgupta36/Lyrical-Sentiment-Analysis/blob/main/Code/UI/Classical%20ML/streamer.py)
+- [tfidf_vectorizer.pkl](https://github.com/prathamgupta36/Lyrical-Sentiment-Analysis/blob/main/Code/UI/Classical%20ML/tfidf_vectorizer.pkl)
+
+Then in the folder where the files are saved then do:
+```
+streamlit run streamer.py
+```
+This should open up a webui on your machine where you can input lyrics and see the sentiment.
+
+### Both
+
 
 ## Contributors
 - [Josue Cortez](https://github.com/jgcortez)
