@@ -35,6 +35,20 @@ pip install --upgrade webdriver-manager
 
 ## Usage
 
+## UI
+
+### Classical Machine Learning Model
+
+Download [this](https://github.com/prathamgupta36/Lyrical-Sentiment-Analysis/tree/main/Code/UI/Classical%20ML) folder then do:
+```
+cd UI
+```
+After you are in the folder:
+```
+streamlit run streamer.py
+```
+This should open up a webui on your machine where you can input lyrics and see the sentiment.
+
 
 ## Contributors
 - [Josue Cortez](https://github.com/jgcortez)
