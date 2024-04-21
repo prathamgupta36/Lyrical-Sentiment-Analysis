@@ -39,11 +39,12 @@ pip install --upgrade webdriver-manager
 
 ### Classical Machine Learning Model
 
-Download [this](https://github.com/prathamgupta36/Lyrical-Sentiment-Analysis/tree/main/Code/UI/Classical%20ML) folder then do:
-```
-cd UI
-```
-After you are in the folder:
+Download these file from the project:
+- [logistic_regression_model.pkl](https://github.com/prathamgupta36/Lyrical-Sentiment-Analysis/blob/main/Code/UI/Classical%20ML/logistic_regression_model.pkl)
+- [streamer.py](https://github.com/prathamgupta36/Lyrical-Sentiment-Analysis/blob/main/Code/UI/Classical%20ML/streamer.py)
+- [tfidf_vectorizer.pkl](https://github.com/prathamgupta36/Lyrical-Sentiment-Analysis/blob/main/Code/UI/Classical%20ML/tfidf_vectorizer.pkl)
+
+Then in the folder where the files are saved then do:
 ```
 streamlit run streamer.py
 ```
