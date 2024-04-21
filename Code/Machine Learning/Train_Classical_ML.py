@@ -10,7 +10,7 @@ def train_final_model(X, y):
     X_tfidf = vectorizer.fit_transform(X)  # Transform the entire dataset
 
     # Setup the Logistic Regression Model with a GridSearchCV to find the best parameters
-    model = LogisticRegression(random_state=42)
+    model = LogisticRegression(random_state=7, max_iter=1000)
     param_grid = {'C': [0.1, 1, 10, 100], 'penalty': ['l1', 'l2'], 'solver': ['liblinear']}
     grid_search = GridSearchCV(model, param_grid, cv=5, verbose=1)
     grid_search.fit(X_tfidf, y)
