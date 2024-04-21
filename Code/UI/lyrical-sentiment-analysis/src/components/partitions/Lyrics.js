@@ -51,8 +51,7 @@ function Lyrics() {
 			isRunning: true,
 			results: null
 		});
-		const results = await runModel(model, inputtedLyrics);
-		console.log(results);
+		let results = await runModel(model, inputtedLyrics);
 		stateContext.updateModel({
 			isRunning: false,
 			results: results

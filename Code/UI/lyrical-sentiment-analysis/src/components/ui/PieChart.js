@@ -1,21 +1,28 @@
 import React from 'react';
 import ApexCharts from 'react-apexcharts';
 
-class BarChart extends React.Component {
+class PieChart extends React.Component {
 	constructor(props) {
 		super(props);
+		console.log(props.results);
 		this.state = {
 			series: props.results.map(x => Math.round(x[1]*100000)/100000),
 			options: {
 				chart: {
-					height: '40%',
-					type: 'donut'
+					type: 'donut',
+					background: '#181818'
 				},
 				labels: props.results.map(x => x[0]),
 				colors: ['#008FFB', '#FD6A6A'],
-				height: '40%'
-			},
-			height: '40%'
+				theme: {
+					mode: 'dark'
+				},
+				stroke: {
+					show: true,
+					width: 1.5,
+					colors: ['#fff']
+				}
+			}
 		};
 	}
 	render() {
@@ -30,4 +37,4 @@ class BarChart extends React.Component {
 	}
 }
 
-export default BarChart;
+export default PieChart;
