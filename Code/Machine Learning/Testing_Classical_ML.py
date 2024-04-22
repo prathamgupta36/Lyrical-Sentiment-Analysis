@@ -3,6 +3,7 @@ import numpy as np
 import joblib
 from sklearn.metrics import accuracy_score, roc_auc_score, precision_recall_fscore_support, confusion_matrix
 from sklearn.preprocessing import label_binarize
+from collections import Counter
 
 def predict_sentiment(lyrics):
     # Load the trained model and vectorizer
@@ -17,9 +18,13 @@ def predict_sentiment(lyrics):
     
     return prediction[0]
 
-def load_and_predict_new_data(file_path):
+def load_and_predict_new_data(file_path, filter_column=None, filter_value=None):
     # Load the new data
     new_data = pd.read_csv(file_path)
+
+    # Filter data if filter_column and filter_value are specified
+    if filter_column and filter_value:
+        new_data = new_data[new_data[filter_column] == filter_value]
 
     # Remove rows where the Label is 'Neutral'
     new_data = new_data[new_data['Label'] != 'Neutral']
@@ -52,26 +57,53 @@ def calculate_metrics(new_data, predictions, predicted_probs):
     roc_auc = roc_auc_score(true_labels, predicted_probs)
     
     # Calculate Precision, Recall, F1-Score for each class and weighted
-    precision, recall, f1, _ = precision_recall_fscore_support(true_labels, numeric_predictions, average=None, labels=[0, 1])
-    weighted_precision, weighted_recall, weighted_f1, _ = precision_recall_fscore_support(true_labels, numeric_predictions, average='weighted')
+    precision, recall, f1, _ = precision_recall_fscore_support(true_labels, numeric_predictions, average=None, labels=[0, 1], zero_division=1)
+    weighted_precision, weighted_recall, weighted_f1, _ = precision_recall_fscore_support(true_labels, numeric_predictions, average='weighted', zero_division=1)
     
     # Calculate Confusion Matrix
     conf_matrix = confusion_matrix(true_labels, numeric_predictions)
     
     # Print Metrics
-    print(f"Accuracy: {round(accuracy, 2)}")
+    print(f"\nAccuracy: {round(accuracy, 2)}")
     print(f"ROC AUC Score: {round(roc_auc, 2)}")
     print("Negative: Precision: {}, Recall: {}, F1-Score: {}".format(round(precision[0], 2), round(recall[0], 2), round(f1[0], 2)))
     print("Positive: Precision: {}, Recall: {}, F1-Score: {}".format(round(precision[1], 2), round(recall[1], 2), round(f1[1], 2)))
     print("Weighted: Precision: {}, Recall: {}, F1-Score: {}".format(round(weighted_precision, 2), round(weighted_recall, 2), round(weighted_f1, 2)))
     print(f"Confusion Matrix:\n{conf_matrix}")
 
+def count_predictions(predictions, column_name=None, column_value=None):
+    if column_name and column_value:
+        print(f"\nCalculating Positives & Negatives for {column_name} = {column_value}")
+    else:
+        print(f"\nCalculating Positives & Negatives")
+
+    # Count occurrences of each label in the predictions array
+    counts = Counter(predictions)
+    total_predictions = len(predictions)
+
+    # Print the count for each label
+    print(f"Total Amount of Predictions: {total_predictions}")
+    print(f"Total 'Positive' predictions: {counts['Positive']} ({round(100*counts['Positive']/total_predictions, 2)}%)")
+    print(f"Total 'Negative' predictions: {counts['Negative']} ({round(100*counts['Negative']/total_predictions, 2)}%)")
+
+
+
 # Path to the Validating dataset CSV file
 file_path = 'Data/Cleaned/New/testCleanedLabeled.csv'
+columnNameFilter = 'Top100Year'
+columnValueFilterArray = range(2014, 2024)
+
+# Evaluate whole tresting data set.
+new_data, predictions, predicted_probs = load_and_predict_new_data(file_path)
+count_predictions(predictions)
+calculate_metrics(new_data, predictions, predicted_probs)
 
 # Predict new data and calculate metrics
-new_data, predictions, predicted_probs = load_and_predict_new_data(file_path)
-calculate_metrics(new_data, predictions, predicted_probs)
+for columnValueFilter in columnValueFilterArray:
+    new_data, predictions, predicted_probs = load_and_predict_new_data(file_path, filter_column=columnNameFilter, filter_value=columnValueFilter)
+    count_predictions(predictions, columnNameFilter, str(columnValueFilter))
+    # calculate_metrics(new_data, predictions, predicted_probs)
+
 
 
 # Example Positive Lyrics
@@ -82,4 +114,4 @@ lyrics = "young first saw close eyes flashback starts standing balcony summer ai
 
 # Predict and print the sentiment
 sentiment = predict_sentiment(lyrics)
-print(f"Predicted Sentiment: {sentiment}")
+print(f"\nPredicted Sentiment: {sentiment}")
