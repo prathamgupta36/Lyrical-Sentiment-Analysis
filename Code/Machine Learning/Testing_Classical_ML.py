@@ -64,7 +64,7 @@ def calculate_metrics(new_data, predictions, predicted_probs):
     print(f"Confusion Matrix:\n{conf_matrix}")
 
 # Path to the Validating dataset CSV file
-file_path = 'Data/Cleaned/cleanedValidatingLabeled.csv'
+file_path = 'Data/Cleaned/New/testCleanedLabeled.csv'
 
 # Predict new data and calculate metrics
 new_data, predictions, predicted_probs = load_and_predict_new_data(file_path)
