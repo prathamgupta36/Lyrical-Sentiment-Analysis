@@ -30,11 +30,6 @@ To update the webdriver after we import all the required files with the command 
 pip install --upgrade webdriver-manager
 ```
 
-## Installation
-
-
-## Usage
-
 ## UI
 
 ### Classical Machine Learning Model UI
