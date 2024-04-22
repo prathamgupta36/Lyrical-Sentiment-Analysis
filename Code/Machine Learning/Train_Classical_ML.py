@@ -22,7 +22,7 @@ def train_final_model(X, y):
     print("Model and vectorizer saved successfully!")
 
 # Load the data
-df = pd.read_csv('Data/Cleaned/New/trainCleanedLabeled.csv')
+df = pd.read_csv('Data/Cleaned/trainCleanedLabeled.csv')
 
 # Remove rows where the Label is 'Neutral' to focus on binary classification
 df = df[df['Label'] != 'Neutral']

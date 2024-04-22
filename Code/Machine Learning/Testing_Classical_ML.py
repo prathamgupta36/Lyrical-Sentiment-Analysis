@@ -89,21 +89,22 @@ def count_predictions(predictions, column_name=None, column_value=None):
 
 
 # Path to the Validating dataset CSV file
-file_path = 'Data/Cleaned/New/testCleanedLabeled.csv'
+file_path = 'Data/Cleaned/testCleanedLabeled.csv'
 columnNameFilter = 'Top100Year'
 columnValueFilterArray = range(2014, 2024)
 
 # Evaluate whole tresting data set.
 new_data, predictions, predicted_probs = load_and_predict_new_data(file_path)
+print(predictions)
+print(predicted_probs)
 count_predictions(predictions)
 calculate_metrics(new_data, predictions, predicted_probs)
 
-# Predict new data and calculate metrics
+# Predict data for filtered values
 for columnValueFilter in columnValueFilterArray:
     new_data, predictions, predicted_probs = load_and_predict_new_data(file_path, filter_column=columnNameFilter, filter_value=columnValueFilter)
     count_predictions(predictions, columnNameFilter, str(columnValueFilter))
     # calculate_metrics(new_data, predictions, predicted_probs)
-
 
 
 # Example Positive Lyrics

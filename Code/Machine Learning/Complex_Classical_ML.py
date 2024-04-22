@@ -13,7 +13,7 @@ import warnings
 warnings.filterwarnings("ignore", category=UndefinedMetricWarning)
 
 # Load the data
-df = pd.read_csv('Data/Cleaned/New/completeCleanedLabeled.csv')
+df = pd.read_csv('Data/Cleaned/completeCleanedLabeled.csv')
 
 # Remove rows where the Label is 'Neutral'
 df = df[df['Label'] != 'Neutral']
