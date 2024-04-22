@@ -20,6 +20,9 @@ def predict_sentiment(lyrics):
 def load_and_predict_new_data(file_path):
     # Load the new data
     new_data = pd.read_csv(file_path)
+
+    # Remove rows where the Label is 'Neutral'
+    new_data = new_data[new_data['Label'] != 'Neutral']
     
     # Load the trained model and vectorizer
     model = joblib.load('Data/Model/classical_ml_model.pkl')
