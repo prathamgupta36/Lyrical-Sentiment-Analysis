@@ -95,8 +95,6 @@ columnValueFilterArray = range(2014, 2024)
 
 # Evaluate whole tresting data set.
 new_data, predictions, predicted_probs = load_and_predict_new_data(file_path)
-print(predictions)
-print(predicted_probs)
 count_predictions(predictions)
 calculate_metrics(new_data, predictions, predicted_probs)
 
